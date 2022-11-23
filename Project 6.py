@@ -59,7 +59,7 @@ while(True):
         print("\n     ---------------     Contacts     ----------------\n")
         for index in range(0, len(name_list)):
             print("---     ", name_list[index], " : ", contact_list[index], "     ---\n")
-            time.sleep(1)
+            time.sleep(0.25)
     elif(choice == 0):
         print("\n     ---------------     Thanks For Using Our Software!!!     ---------------\n")
         break
