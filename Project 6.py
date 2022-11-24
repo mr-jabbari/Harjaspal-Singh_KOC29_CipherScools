@@ -1,73 +1,81 @@
-import time
-import os
+from time import sleep
+from os import system
 
 name_list = []
 contact_list = []
 
 while(True):
-    print("\n     ---------------     1. Add a New Contact        ---------------\n")
-    print("     ---------------     2. View a Contact           ---------------\n")
-    print("     ---------------     3. Display all Contacts     ---------------\n")
-    print("     ---------------     0. Exit                     ---------------\n")
+    print("""1. Add a New Contact
+2. View a Contact
+3. Display all Contacts
+0. Exit\n""")
+
     choice = int(input("Enter Your Choice: "))
-    time.sleep(0.25)
-    os.system('cls')
+    sleep(0.25)
+    system('cls')
     if(choice == 1):
-        name = str(input("     Enter The Name    \n\t"))
-        contact = int(input("     Enter Contact Number     \n\t"))
+        name = str(input("Enter The Name: "))
+        contact = int(input("Enter Contact Number: "))
         name_list.append(name)
         contact_list.append(contact)
-        os.system('cls')
+
+        system('cls')
     elif(choice == 2):
-        print("\n     ---------------     1. Search by Name        ---------------\n")
-        print("     ---------------     0. Search by Contact     ---------------\n")
+        print("""1. Search by Name
+0. Search by Contact\n""")
         usr_choice = int(input("Enter Your Choice: "))
-        time.sleep(0.25)
-        os.system('cls')
+        sleep(0.25)
+        system('cls')
         if(usr_choice == 1):
-            name = str(input("      Enter the Name of Contact You want to Search     \n\t"))
+            name = str(input("Enter the Name of Contact You want to Search: "))
             if(name in  name_list):
                 index = name_list.index(name)
-                os.system('cls')
-                print("---     ", name_list[index], " : ", contact_list[index], "     ---\n")
-                time.sleep(1)
-                os.system('cls')
+                system('cls')
+                print(f"---     {name_list[index]}  :  {contact_list[index]}    ---")
+                sleep(1)
+                _ = input("press Enter to countine")
+                system('cls')
             else:
-                os.system('cls')
-                print("\n     --------------     Sorry, Name Not Found     ---------------\n")
-                time.sleep(0.25)
-                os.system('cls')
+                system('cls')
+                print("     --------------     Sorry, Name Not Found     ---------------")
+                sleep(0.25)
+                _ = input("press Enter to countine")
+                system('cls')
         elif(usr_choice == 0):
-            contact = int(input("      Enter the Name of Contact You want to Search     \n\t"))
+            contact = int(input("      Enter the Name of Contact You want to Search      "))
             if(contact in  contact_list):
                 index = contact_list.index(contact)
-                os.system('cls')
-                print("---     ", name_list[index], " : ", contact_list[index], "     ---\n")
-                time.sleep(1)
-                os.system('cls')
+                system('cls')
+                print(f"---     {name_list[index]}  :  {contact_list[index]}    ---")
+                sleep(1)
+                _ = input("press Enter to countine")
+                system('cls')
             else:
-                os.system('cls')
-                print("\n     --------------     Sorry, Contact Not Found     ---------------\n")
-                time.sleep(0.25)
-                os.system('cls')
+                system('cls')
+                print("--------------     Sorry, Contact Not Found     ---------------")
+                sleep(1)
+                _ = input("press Enter to countine")
+                system('cls')
         else:
-            os.system('cls')
-            print("\n     ---------------     INVALID  CHOICE     ---------------\n")
-            time.sleep(0.25)
-            os.system('cls')
+            system('cls')
+            print("---------------     INVALID  CHOICE     ---------------")
+            sleep(0.25)
+            _ = input("press Enter to countine")
+            system('cls')
     elif(choice == 3):
-        print("\n     ---------------     Contacts     ----------------\n")
+        print("---------------     Contacts     ----------------")
         for index in range(0, len(name_list)):
-            print("---     ", name_list[index], " : ", contact_list[index], "     ---\n")
-            time.sleep(0.25)
+            print(f"---     {name_list[index]}  :  {contact_list[index]}    ---")
+            sleep(0.25)
+            _ = input("press Enter to countine")
     elif(choice == 0):
-        print("\n     ---------------     Thanks For Using Our Software!!!     ---------------\n")
+        print("---------------     Thanks For Using Our Software!!!     ---------------")
         break
     else:
-        os.system('cls')
-        print("\n     ---------------     INVALID  CHOICE     ---------------\n")
-        time.sleep(0.25)
-        os.system('cls')
-        print("\n     ---------------     RESTARTING.........     ---------------\n")
-        time.sleep(0.25)
-        os.system('cls')
+        system('cls')
+        print("---------------     INVALID  CHOICE     ---------------")
+        sleep(0.25)
+        system('cls')
+        print("---------------     RESTARTING.........     ---------------")
+        sleep(1)
+        system('cls')
